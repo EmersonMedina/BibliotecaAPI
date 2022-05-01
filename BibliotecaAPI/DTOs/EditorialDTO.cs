@@ -1,6 +1,6 @@
-﻿namespace BibliotecaAPI.Entidades
+﻿namespace BibliotecaAPI.DTOs
 {
-    public class Editorial: IHaveId
+    public class EditorialDTO
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
