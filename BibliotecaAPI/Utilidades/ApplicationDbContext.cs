@@ -13,7 +13,7 @@ namespace BibliotecaAPI.Utilidades
 
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Editorial> Editoriales { get; set; }
-
+        public DbSet<Autor> Autores { get; set; }
 
     }
 }

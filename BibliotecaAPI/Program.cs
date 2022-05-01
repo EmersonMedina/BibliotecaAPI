@@ -1,3 +1,4 @@
+using BibliotecaAPI.Entidades;
 using BibliotecaAPI.Utilidades;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
@@ -13,6 +14,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(o =>
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddSingleton<IAlmacenadorArchivos, AlmacenadorArchivosLocal>();
+builder.Services.AddHttpContextAccessor(); 
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -27,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles(); 
 
 app.UseAuthorization();
 

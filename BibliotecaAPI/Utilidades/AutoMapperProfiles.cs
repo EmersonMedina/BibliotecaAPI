@@ -23,6 +23,15 @@ namespace BibliotecaAPI.Utilidades
             CreateMap<CrearEditorialDTO, Editorial>()
             .ReverseMap();
 
+            //---------- Autores -------------//
+
+            CreateMap<Autor, AutorDTO>()
+                .ReverseMap();
+
+            CreateMap<CrearAutorDTO, Autor>()
+            .ReverseMap()
+            .ForMember(a => a.Foto, options => options.Ignore());
+
         }
     }
 }
